@@ -92,6 +92,7 @@ btns.forEach((btn) =>
 );
 
 document.addEventListener("keydown", function (e) {
+  console.log(e.key);
   if (e.key >= 0) {
     calc.inputNumber(e.key);
   }
@@ -101,5 +102,8 @@ document.addEventListener("keydown", function (e) {
   }
   if (symbols.indexOf(e.key) > -1) {
     calc.inputSymbol(e.key);
+  }
+  if (e.key === "Backspace") {
+    calc.clear();
   }
 });
